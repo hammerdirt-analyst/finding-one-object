@@ -11,21 +11,7 @@
 
 
 # generated data
-/resources/sourcestobigforgithub/
-resources/inprocess/
-getdataforrepo.ipynb
-infrastructurerankings.ipynb
-# aare_sa.ipynb
-# linth_sa.ipynb
-# rhone_sa.ipynb
-# ticino_sa.ipynb
-landuse.ipynb
-scratch.ipynb
-add_streets_intersects.ipynb
-check_data.ipynb
-output/
-_build/
-add_exp_variables/
+ignorethis/
 
 # IPython
 profile_default/
