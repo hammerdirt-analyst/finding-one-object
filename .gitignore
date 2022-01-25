@@ -1,0 +1,45 @@
+# if you are producing data in a repo with
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.log
+*.pot
+*.pyc
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
+
+
+
+# generated data
+/resources/sourcestobigforgithub/
+resources/inprocess/
+getdataforrepo.ipynb
+infrastructurerankings.ipynb
+# aare_sa.ipynb
+# linth_sa.ipynb
+# rhone_sa.ipynb
+# ticino_sa.ipynb
+landuse.ipynb
+scratch.ipynb
+add_streets_intersects.ipynb
+check_data.ipynb
+output/
+_build/
+add_exp_variables/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+
+
+# jetbrains IDE stuff
+*.iml
+.idea/
+
+# ms IDE stuff
+*.code-workspace
+.history
+.vscode
