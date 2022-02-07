@@ -25,7 +25,7 @@ Tampon applicators are part of a group of objects that are found on the beach th
 __The results__
 
 
-*__Below:__ the probability of finding an FHP in Geneva. The differences between locations is not very large, but if you need to leverage every advantage, which location would you pick?*
+*__Below:__ the probability of finding a cotton swab on the beach in Geneva. The differences between locations is not very large, but if you need to leverage every advantage, which location would you pick?*
 
 ![sample image](https://github.com/hammerdirt-analyst/finding-one-object/blob/main/resources/images/theta_geneva_readme.png)
 
