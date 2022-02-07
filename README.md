@@ -22,27 +22,16 @@ She summarized her preferences and constraints in the following way:
 
 Tampon applicators are part of a group of objects that are found on the beach that most likely originate from a toilet or a waste water treatment facility. Depending on the methods used at a water treatment facility the objects pass in between whatever system is in place for collecting inorganic solids in the waste water. This is a common problem and has been linked to older or undersized facilities.
 
-
-__The Challenge__
-
-Identify the location that has the greatest probability  of finding a specifc object at one beach-litter survey within the defined geographic and temporal bounds given the data from the previous surveys.
-
-1. The objects of interest: tampons and tampon applicators.
-
-2. Geographic bounds: City of Geneva and accessible by public transport
-
-3. Temporal bounds: no more than three hours including transport
-
 __The results__
 
 
 *__Below:__ the probability of finding an FHP in Geneva. The differences between locations is not very large, but if you need to leverage every advantage, which location would you pick?*
 
-![sample image](url please)
+![sample image](https://github.com/hammerdirt-analyst/finding-one-object/blob/main/resources/images/theta_geneva_readme.png)
 
 **Hammerdirt everyday.**<br>
 
->\u2764\ufe0f what you do.<br>
+> Love what you do.<br>
 
 analyst@hammerdirt.ch
 
