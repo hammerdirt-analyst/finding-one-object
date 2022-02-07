@@ -1,6 +1,6 @@
 # Finding one object
 
-Bayes theorom is used, the Beta-Binomial conjugate is used to determine which location will most likely have a requested object. The data comes from beach litter surveys in Switzerland that were mandated by the Swiss Federal Office for the Environment. 
+Bayes theorom is used is used to determine which location will most likely have a requested object. The data comes from beach litter surveys in Switzerland that were mandated by the Swiss Federal Office for the Environment. The requested objects are any object that appears in the standard inventory. The object of interest and covariates are considered when estimating the significance and validity of the findings. 
 
 The use of the Beta-Binomial model is illustrated through a real request for information and the subsequent search to locate an FHP on the beach of Lake Geneva. 
 
