@@ -32,3 +32,21 @@ Identify the location that has the greatest probability  of finding a specifc ob
 2. Geographic bounds: City of Geneva and accessible by public transport
 
 3. Temporal bounds: no more than three hours including transport
+
+__The results__
+
+
+*__Below:__ the probability of finding an FHP in Geneva. The differences between locations is not very large, but if you need to leverage every advantage, which location would you pick?*
+
+![sample image](url please)
+
+**Hammerdirt everyday.**<br>
+
+>\u2764\ufe0f what you do.<br>
+
+analyst@hammerdirt.ch
+
+
+
+
+
