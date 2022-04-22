@@ -228,7 +228,8 @@ def remove_ticks(ax):
 #    1. List of survey locations and results
 #    2. Different survey results for different values of $\theta$
 #    3. Scaling the prior
-#    4. Ba
+#    4. Bayes factor
+#    5. Sampling the posterior distribution
 
 # ## INTRODUCTION 
 # 
@@ -1248,7 +1249,7 @@ plt.show()
 # (s4)=
 # ### S4: Computing the integrals for marginal probabiltity
 # 
-# The marginal probability is the integral of the _Likelihood X the Prior_. Another good explanantion is _it is the probability of the data given $\theta$ times the probablity of $\theta$_ for different values of $\theta$.
+# The marginal probability is the integral of the _Likelihood \* Prior_. Another good explanantion is _it is the probability of the data given $\theta$ times the probablity of $\theta$_ for different values of $\theta$.
 # 
 # ```python
 # from scipy import integrate
@@ -1351,7 +1352,7 @@ plt.show()
 # (s5)=
 # ### S5: Drawing samples from the posterior distribution of each location
 # 
-# The marginal probability is the integral of the _Likelihood X the Prior_. Another good explanantion is _it is the probability of the data given $\theta$ times the probablity of $\theta$_ for different values of $\theta$.
+# The method requires that $\theta$ for each location is sampled and the result of that sample is applied to the Binomial distribution. In the example below, the locations are sampled by region, according to the order in Figures 5-8. A new value for $\theta$ is drawn for each sample.
 # 
 # ```python
 # def draw_samples_from_each_location(nsamps, r_names, a_prior="scaled", prior_args=(9.59, 13.64)):
