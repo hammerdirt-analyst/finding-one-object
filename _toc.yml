@@ -1,0 +1,13 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: titlepage
+
+parts:
+  - caption: The probality of FHP
+    numbered: False
+    chapters:
+    - file: chance_of_an_encounter
+    - file: references
+  
