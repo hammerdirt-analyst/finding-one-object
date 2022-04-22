@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>References &#8212; Chance of an encounter</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="The chance of finding an object" href="chance_of_an_encounter.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Chance of an encounter</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="titlepage.html">
+   The probability of trash
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  The probality of FHP
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="chance_of_an_encounter.html">
+   The chance of finding an object
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/references.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/hammerdirt-analyst/finding-one-object"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/hammerdirt-analyst/finding-one-object/issues/new?title=Issue%20on%20page%20%2Freferences.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>References</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="references">
+<h1>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h1>
+<div class="docutils container" id="id1">
+<dl class="citation">
+<dt class="label" id="id7"><span class="brackets">Agn21</span></dt>
+<dd><p>European Environment Agnecy. Mlw data viewer. 2021. URL: <a class="reference external" href="https://www.eea.europa.eu/themes/water/europes-seas-and-coasts/assessments/marine-litterwatch/data-and-results/marine-litterwatch-data-viewer">https://www.eea.europa.eu/themes/water/europes-seas-and-coasts/assessments/marine-litterwatch/data-and-results/marine-litterwatch-data-viewer</a>.</p>
+</dd>
+<dt class="label" id="id36"><span class="brackets">ass21</span></dt>
+<dd><p>MerTerre association. Beach litter survey results at port saint louis. 2021. URL: <a class="reference external" href="https://mer-terre.org/">https://mer-terre.org/</a>.</p>
+</dd>
+<dt class="label" id="id28"><span class="brackets">Ber98</span></dt>
+<dd><p>James Berger. A catalog of noninformative priors. <em>none</em>, 1998. URL: <a class="reference external" href="http://www.stats.org.uk/priors/noninformative/YangBerger1998.pdf">http://www.stats.org.uk/priors/noninformative/YangBerger1998.pdf</a>.</p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">com</span></dt>
+<dd><p>European commission. Achieve good environmental status. URL: <a class="reference external" href="https://ec.europa.eu/environment/marine/good-environmental-status/index_en.htm">https://ec.europa.eu/environment/marine/good-environmental-status/index_en.htm</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets">DP21</span></dt>
+<dd><p>Cameron Davidson-Pilon. <em>Bayesian Methods for Hackers</em>. Addison-Wesley Professional, 2021. URL: <a class="reference external" href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers">https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers</a>, <a class="reference external" href="https://doi.org/10.5555/2851115">doi:10.5555/2851115</a>.</p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">dP21</span></dt>
+<dd><p>Politécnica Universidad Católica del Perú. Marine impacts in lca (marilca). 2021. URL: <a class="reference external" href="https://marilca.org/">https://marilca.org/</a>.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">Dow01</span></dt>
+<dd><p>Alan Downey. <em>Think Bayes 2ed</em>. Green Tea Press, 201. URL: <a class="reference external" href="http://allendowney.github.io/ThinkBayes2/">http://allendowney.github.io/ThinkBayes2/</a>.</p>
+</dd>
+<dt class="label" id="id39"><span class="brackets">DDMVanCappellen15</span></dt>
+<dd><p>Alexander G.J. Driedger, Hans H. Dürr, Kristen Mitchell, and Philippe Van Cappellen. Plastic debris in the laurentian great lakes: a review. <em>Journal of Great Lakes Research</em>, 41(1):9–19, 2015. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0380133015000064">https://www.sciencedirect.com/science/article/pii/S0380133015000064</a>, <a class="reference external" href="https://doi.org/https://doi.org/10.1016/j.jglr.2014.12.020">doi:https://doi.org/10.1016/j.jglr.2014.12.020</a>.</p>
+</dd>
+<dt class="label" id="id45"><span class="brackets">EAW22</span></dt>
+<dd><p>EAWAG. Eawag - aquatic research. 2022. URL: <a class="reference external" href="http://meteolakes.ch/#!/hydro/geneva">http://meteolakes.ch/#!/hydro/geneva</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">Eri21</span></dt>
+<dd><p>Shannon et all Erismann. Identification, quantification and analysis of observable anthropogenic litter along swiss freshwater systems¶. Technical Report, hammerdirt, 2021. URL: <a class="reference external" href="https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/titlepage.html">https://hammerdirt-analyst.github.io/IQAASL-End-0f-Sampling-2021/titlepage.html</a>, <a class="reference external" href="https://doi.org/10.5281/zenodo.6053926">doi:10.5281/zenodo.6053926</a>.</p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">eal21</span></dt>
+<dd><p>Stefanini R.; Borghesi G.; Ronzano A.; et al. Plastic or glass: a new environmental assessment with a marine litter indicator for the comparison of pasteurized milk bottles. <em>International Journal of Life Cycle Assessment</em>, 2021. <a class="reference external" href="https://doi.org/s11367-020-01804-x">doi:s11367-020-01804-x</a>.</p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">ea21</span></dt>
+<dd><p>John S. Woods et all. A framework for the assessment of marine litter impacts in life cycle impact assessment. <em>Ecological Indicators</em>, 129:107918, 2021. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1470160X21005835">https://www.sciencedirect.com/science/article/pii/S1470160X21005835</a>, <a class="reference external" href="https://doi.org/j.ecolind.2021.107918">doi:j.ecolind.2021.107918</a>.</p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">eall09</span></dt>
+<dd><p>Cheshire et all. Unep/ioc guidelines on survey and monitoring of marine litter. <em>UNEP Regional Seas Reports and Studies</em>, 2009.</p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">For21</span></dt>
+<dd><p>World Economic Forum. My fight to remove plastic from period products – and why it matters. 2021. URL: <a class="reference external" href="https://www.weforum.org/agenda/2020/11/remove-plastic-from-period-products/">https://www.weforum.org/agenda/2020/11/remove-plastic-from-period-products/</a>.</p>
+</dd>
+<dt class="label" id="id19"><span class="brackets">GSOBrienW+21</span></dt>
+<dd><p>François Galgani, Aleke Stöfen-O'Brien, Judith Weis, Christos Ioakeimidis, Qamar Schuyler, Iryna Makarenko, Huw Griffiths, Joan Bondareff, Andre Vethaak, Alan Deidun, Paula Sobral, Konstantinos Topouzelis, Penny Vlahos, Fernanda Lana, Martin Hassellov, Olivia Gerigny, Bera Arsonina, Archis Ambulkar, Maurizio Azzaro, and Maria Bebianno. Are litter, plastic and microplastic quantities increasing in the ocean? <em>Microplastics and Nanoplastics</em>, 01 2021. <a class="reference external" href="https://doi.org/10.1186/s43591-020-00002-8">doi:10.1186/s43591-020-00002-8</a>.</p>
+</dd>
+<dt class="label" id="id22"><span class="brackets">Gel21</span></dt>
+<dd><p>Andrew Gelman. <em>Bayesian Data Analysis - Third edition</em>. Columbia university, 2021. URL: <a class="reference external" href="http://www.stat.columbia.edu/~gelman/book/BDA3.pdf">http://www.stat.columbia.edu/~gelman/book/BDA3.pdf</a>, <a class="reference external" href="https://doi.org/10.1201/b16018">doi:10.1201/b16018</a>.</p>
+</dd>
+<dt class="label" id="id46"><span class="brackets">ham22</span></dt>
+<dd><p>hammerdirt. Zenodo id. 2022. URL: <a class="reference external" href="http://example.com">http://example.com</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">HGFT+17</span></dt>
+<dd><p>Georg Hanke, Daniel González Fernández, Tweehuysen, Bellert, Holzhauer, Andreja Palatinus, Hohenblum, and L. Oosterbaan. Riverine litter monitoring - options and recommendations. <em>publications Office of the European Union</em>, 02 2017. <a class="reference external" href="https://doi.org/10.2788/461233">doi:10.2788/461233</a>.</p>
+</dd>
+<dt class="label" id="id2"><span class="brackets">Han13</span></dt>
+<dd><p>George Hanke. Guidance on monitoring of marine litter in european seas. <em>Joint Research Centre of the European Commission</em>, 2013. URL: <a class="reference external" href="https://indicit-europa.eu/cms/wp-content/uploads/2017/05/guidance_monitoring_marine_litter_2013.pdf">https://indicit-europa.eu/cms/wp-content/uploads/2017/05/guidance_monitoring_marine_litter_2013.pdf</a>.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">HG19</span></dt>
+<dd><p>van Loon W. Hanke G., Walvoort D. Eu marine beach litter baselines. <em>Publications Office of the European Union</em>, 2019. <a class="reference external" href="https://doi.org/10.2760/16903">doi:10.2760/16903</a>.</p>
+</dd>
+<dt class="label" id="id29"><span class="brackets">Iro97</span></dt>
+<dd><p>Telba Z. Irony. Non-informative priors do not exist. <em>Journal of Statistical Planning and Inference</em>, 1997. URL: <a class="reference external" href="https://www.uv.es/~bernardo/1997JSPI.pdf">https://www.uv.es/~bernardo/1997JSPI.pdf</a>.</p>
+</dd>
+<dt class="label" id="id41"><span class="brackets">Jay03</span></dt>
+<dd><p>Edwind Jaynes. <em>Probability Theory: The logic of science</em>. Washington University, 2003. ISBN 0521592712.</p>
+</dd>
+<dt class="label" id="id25"><span class="brackets">Joh21</span></dt>
+<dd><p>Alicia Johnson. <em>Bayes Rules! An Introduction to Applied Bayesian Modeling</em>. Chapman and Hall, 2021. URL: <a class="reference external" href="https://www.bayesrulesbook.com/chapter-1.html">https://www.bayesrulesbook.com/chapter-1.html</a>.</p>
+</dd>
+<dt class="label" id="id26"><span class="brackets">Kru15</span></dt>
+<dd><p>John K. Kruschke. <em>Doing Bayesian Data Analysis: A Tutorial with R, JAGS,and Stan</em>. Elsevier, 2015.</p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">OSP10</span></dt>
+<dd><p>OSPAR. <em>Guideline for Monitoriing marine litter on the Beaches in the OSPAR Maritime Area</em>. OSPAE, 2010.</p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">OSP17</span></dt>
+<dd><p>OSPAR. Beach litter - abundance, composition and trends. <em>D10 - Marine Litter</em>, 2017.</p>
+</dd>
+<dt class="label" id="id33"><span class="brackets">pdt20</span></dt>
+<dd><p>The pandas development team. Pandas-dev/pandas: pandas. <em>Python software</em>, 2020. URL: <a class="reference external" href="https://doi.org/10.5281/zenodo.3509134">https://doi.org/10.5281/zenodo.3509134</a>, <a class="reference external" href="https://doi.org/10.5281/zenodo.3509134">doi:10.5281/zenodo.3509134</a>.</p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">pro21</span></dt>
+<dd><p>UN Environment programme. Life cycle initative. 2021. URL: <a class="reference external" href="https://www.lifecycleinitiative.org/">https://www.lifecycleinitiative.org/</a>.</p>
+</dd>
+<dt class="label" id="id43"><span class="brackets">Rya15</span></dt>
+<dd><p>Peter G. Ryan. <em>A Brief History of Marine Litter Research</em>, pages 1–25. Springer International Publishing, Cham, 2015. URL: <a class="reference external" href="https://doi.org/10.1007/978-3-319-16510-3_1">https://doi.org/10.1007/978-3-319-16510-3_1</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-16510-3_1">doi:10.1007/978-3-319-16510-3_1</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">sci19</span></dt>
+<dd><p>Conseil scientifique. Rapports sur les études et recherches entreprises dans le bassin lémanique. Technical Report, Commission internationale pour la protection des eaux du Léman contre la pollution –CIPEL, Agroscope-Changins -Bâtiment DC50, route de Duillier, CP 1080 CH -1260 Nyon 1, 2019. URL: <a class="reference external" href="https://www.cipel.org/wp-content/uploads/2021/06/rapportscientifique-camp-2019.pdf">https://www.cipel.org/wp-content/uploads/2021/06/rapportscientifique-camp-2019.pdf</a>.</p>
+</dd>
+<dt class="label" id="id44"><span class="brackets">Sco72</span></dt>
+<dd><p>Professor G Scott. Plastics packaging and coastal pollution. <em>International Journal of Environmental Studies</em>, 3(1-4):35–36, 1972.</p>
+</dd>
+<dt class="label" id="id42"><span class="brackets">vDJLAMMWEJ20</span></dt>
+<dd><p>van Doorn J.; Ly A.; Marsman M.; Wagenmakers E.-J. Bayesian rank-based hypothesis testing for the rank sum test, the signed rank test, and spearman’s ρ. <em>Journal of Applied Sciences</em>, 2020. <a class="reference external" href="https://doi.org/10.1080/02664763.2019.1709053">doi:10.1080/02664763.2019.1709053</a>.</p>
+</dd>
+<dt class="label" id="id4"><span class="brackets">VLW20</span></dt>
+<dd><p>Fleet D. Van Loon W., Hanke G. A european threshold value and assessment method for macro litter on coastlines. <em>Publications Office of the European Union</em>, 2020.</p>
+</dd>
+<dt class="label" id="id34"><span class="brackets">VRD09</span></dt>
+<dd><p>Guido Van Rossum and Fred L. Drake. <em>Python 3 Reference Manual</em>. CreateSpace, Scotts Valley, CA, 2009. ISBN 1441412697.</p>
+</dd>
+<dt class="label" id="id35"><span class="brackets">VGO+20</span></dt>
+<dd><p>Pauli Virtanen, Ralf Gommers, Travis E. Oliphant, Matt Haberland, Tyler Reddy, David Cournapeau, Evgeni Burovski, Pearu Peterson, Warren Weckesser, Jonathan Bright, Stéfan J. van der Walt, Matthew Brett, Joshua Wilson, K. Jarrod Millman, Nikolay Mayorov, Andrew R. J. Nelson, Eric Jones, Robert Kern, Eric Larson, C J Carey, İlhan Polat, Yu Feng, Eric W. Moore, Jake VanderPlas, Denis Laxalde, Josef Perktold, Robert Cimrman, Ian Henriksen, E. A. Quintero, Charles R. Harris, Anne M. Archibald, Antônio H. Ribeiro, Fabian Pedregosa, Paul van Mulbregt, and SciPy 1.0 Contributors. SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. <em>Nature Methods</em>, 17:261–272, 2020. <a class="reference external" href="https://doi.org/10.1038/s41592-019-0686-2">doi:10.1038/s41592-019-0686-2</a>.</p>
+</dd>
+<dt class="label" id="id37"><span class="brackets">Wei21</span></dt>
+<dd><p>Eric W. Weisstein. Beta distribution. from mathworld–a wolfram web resource. 2021. URL: <a class="reference external" href="https://mathworld.wolfram.com/BetaDistribution.html">https://mathworld.wolfram.com/BetaDistribution.html</a>.</p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">WS96</span></dt>
+<dd><p>Allan Williams and S. Simmons. The degradation of plastic litter in rivers: implications for beaches. <em>Journal of Coastal Conservation</em>, 2:63–72, 01 1996. <a class="reference external" href="https://doi.org/10.1007/BF02743038">doi:10.1007/BF02743038</a>.</p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">OBriainMarquesMendesM+20</span></dt>
+<dd><p>Oisín Ó Briain, Ana R. Marques Mendes, Stephen McCarron, Mark G. Healy, and Liam Morrison. The role of wet wipes and sanitary towels as a source of white microplastic fibres in the marine environment. <em>Water Research</em>, 2020. URL: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0043135420305583">https://www.sciencedirect.com/science/article/pii/S0043135420305583</a>, <a class="reference external" href="https://doi.org/j.watres.2020.116021">doi:j.watres.2020.116021</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="chance_of_an_encounter.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The chance of finding an object</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Hammerdirt collaboration<br/>
+    
+      <div class="extra_footer">
+        <p>
+   \u2764\ufe0f what you do.
+</p>
+
+      </div>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
