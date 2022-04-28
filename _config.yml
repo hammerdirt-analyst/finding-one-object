@@ -33,11 +33,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
-  extra_footer: |
-    <p>
-       \u2764\ufe0f what you do.
-    </p>
-
+  
 
 sphinx:
   config:

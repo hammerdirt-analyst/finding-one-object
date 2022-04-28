@@ -3,11 +3,7 @@
 
 format: jb-book
 root: titlepage
-
-parts:
-  - caption: The probality of FHP
-    numbered: False
-    chapters:
+chapters:
     - file: chance_of_an_encounter
     - file: references
   

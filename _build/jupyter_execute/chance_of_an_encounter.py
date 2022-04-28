@@ -1252,10 +1252,10 @@ plt.show()
 # The marginal probability is the integral of the _Likelihood \* Prior_. Another good explanantion is _it is the probability of the data given $\theta$ times the probablity of $\theta$_ for different values of $\theta$.
 # 
 # ```python
-# from scipy import integrate
-# 
+# bayes factor to compare the marginal probability under the different priors
 # def f_marginal_prob(x,pt,pk,et,n):
-#     """The marginal probability is the Intgral of one function times another.  
+#     """The marginal probability is the Intgral of product of the probabilty of theta
+#     under one condtion and the probability of a result given theta.  
 #     
 #     """
 #         
@@ -1265,18 +1265,67 @@ plt.show()
 #     b = binom.pmf(et, n, x)
 #    
 #     return a*b
+# 
+# def variables_marginal_prob(dt):
+#     """These are indexes for locating the calculated parameters
+#     under different priors
+#     """
+#     pt=dt[5][0]
+#     pk=dt[5][1]
+#     et=dt[4][0]
+#     n=np.sum(dt[4])
+#     
+#     return pt, pk, et, n
+# 
+# 
+# def collect_marginal_probabilities(data):
+#     
+#     marginals = []
+#     
+#     for i, anarray in enumerate(data):
+#         this_marginal = []
+#         for atuple in anarray:            
+#             these_vars = variables_marginal_prob(atuple)
+#             # this where each possible value of theta and t are integrated
+#             # these_vars are the parameters of the ditributions being integrated
+#             k = integrate.quad(f_marginal_prob,0,1, args=these_vars)
+#             this_marginal.append([atuple[0], k[0], k[1], these_vars])
+#         marginals.append(this_marginal)
+#     
+#     return marginals
+# 
+# def make_bfs(marginals, index=1):
+#     
+#     m_one = marginals[index]
+#     
+#     bfs = []
+#     
+#     for i,marginal in enumerate(m_one):
+#         
+#         numerator = marginal[1]
+#         didx = [i for i in np.arange(len(marginal)) if i != index]
+#         denominators = [marginals[x][i][1] for x in didx]
+#         labels = [marginals[x][i][0] for x in didx]
+#                 
+#         factors = [numerator/denominator for denominator in denominators]
+#         bfs.append([labels[0], *factors])
+#     
+#     return bfs
+#     
+# marginals = collect_marginal_probabilities(data_tuples)
+# bfs = make_bfs(marginals)
 # ```
 
 # In[14]:
 
 
-# bayes factor to compare one to the other
-# the marginal probability of the data under the different
-# values of theta times the probability of theta under the conditions of the prior
+# bayes factor to compare the marginal probability under the different priors
 from scipy import integrate
 
+
 def f_marginal_prob(x,pt,pk,et,n):
-    """The marginal probability is the Intgral of one function times another.  
+    """The marginal probability is the Intgral of product of the probabilty of theta
+    under one condtion and the probability of a result given theta.  
     
     """
         
@@ -1288,6 +1337,9 @@ def f_marginal_prob(x,pt,pk,et,n):
     return a*b
 
 def variables_marginal_prob(dt):
+    """These are indexes for locating the calculated parameters
+    under different priors
+    """
     pt=dt[5][0]
     pk=dt[5][1]
     et=dt[4][0]
@@ -1304,6 +1356,8 @@ def collect_marginal_probabilities(data):
         this_marginal = []
         for atuple in anarray:            
             these_vars = variables_marginal_prob(atuple)
+            # this where each possible value of theta and t are integrated
+            # these_vars are the parameters of the ditributions being integrated
             k = integrate.quad(f_marginal_prob,0,1, args=these_vars)
             this_marginal.append([atuple[0], k[0], k[1], these_vars])
         marginals.append(this_marginal)
@@ -1442,6 +1496,19 @@ print(f"Variance of sim_t over {nsamps} samples = {int(np.var(sim_t))}")
 
 
 # In[16]:
+
+
+fig, ax = plt.subplots(figsize=(8,6))
+
+ax.hist(sim_t)
+ax.set_title("Distribution of simulated surveys, 1000 samples of 250 surveys each", pad=12, fontsize=14)
+ax.set_xlabel("Predicted number of surveys with at least one FHP", fontsize=14)
+ax.set_ylabel("Number of samples", fontsize=14)
+
+plt.show()
+
+
+# In[17]:
 
 
 g_lac = dfBeaches[dfBeaches.city.isin(glac)].copy()

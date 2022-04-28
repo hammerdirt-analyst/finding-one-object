@@ -95,11 +95,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  The probality of FHP
- </span>
-</p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -1867,30 +1862,10 @@ Given theta=0.7, and the number of surveys = 250, the expected number of positiv
 <div class="section" id="s4-computing-the-integrals-for-marginal-probabiltity">
 <span id="s4"></span><h3>S4: Computing the integrals for marginal probabiltity<a class="headerlink" href="#s4-computing-the-integrals-for-marginal-probabiltity" title="Permalink to this headline">¶</a></h3>
 <p>The marginal probability is the integral of the <em>Likelihood * Prior</em>. Another good explanantion is <em>it is the probability of the data given <span class="math notranslate nohighlight">\(\theta\)</span> times the probablity of <span class="math notranslate nohighlight">\(\theta\)</span></em> for different values of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
-
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bayes</span> <span class="n">factor</span> <span class="n">to</span> <span class="n">compare</span> <span class="n">the</span> <span class="n">marginal</span> <span class="n">probability</span> <span class="n">under</span> <span class="n">the</span> <span class="n">different</span> <span class="n">priors</span>
 <span class="k">def</span> <span class="nf">f_marginal_prob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pt</span><span class="p">,</span><span class="n">pk</span><span class="p">,</span><span class="n">et</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The marginal probability is the Intgral of one function times another.  </span>
-<span class="sd">    </span>
-<span class="sd">    &quot;&quot;&quot;</span>
-        
-    <span class="c1"># the probability of theta under the prior</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span>    
-    <span class="c1"># the probability of t given n and theta</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">et</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-   
-    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
-</pre></div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bayes factor to compare one to the other</span>
-<span class="c1"># the marginal probability of the data under the different</span>
-<span class="c1"># values of theta times the probability of theta under the conditions of the prior</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
-
-<span class="k">def</span> <span class="nf">f_marginal_prob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pt</span><span class="p">,</span><span class="n">pk</span><span class="p">,</span><span class="n">et</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The marginal probability is the Intgral of one function times another.  </span>
+    <span class="sd">&quot;&quot;&quot;The marginal probability is the Intgral of product of the probabilty of theta</span>
+<span class="sd">    under one condtion and the probability of a result given theta.  </span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
         
@@ -1902,6 +1877,9 @@ Given theta=0.7, and the number of surveys = 250, the expected number of positiv
     <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
 
 <span class="k">def</span> <span class="nf">variables_marginal_prob</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;These are indexes for locating the calculated parameters</span>
+<span class="sd">    under different priors</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">pt</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">pk</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
     <span class="n">et</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
@@ -1918,6 +1896,77 @@ Given theta=0.7, and the number of surveys = 250, the expected number of positiv
         <span class="n">this_marginal</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">atuple</span> <span class="ow">in</span> <span class="n">anarray</span><span class="p">:</span>            
             <span class="n">these_vars</span> <span class="o">=</span> <span class="n">variables_marginal_prob</span><span class="p">(</span><span class="n">atuple</span><span class="p">)</span>
+            <span class="c1"># this where each possible value of theta and t are integrated</span>
+            <span class="c1"># these_vars are the parameters of the ditributions being integrated</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">f_marginal_prob</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">these_vars</span><span class="p">)</span>
+            <span class="n">this_marginal</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">atuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">these_vars</span><span class="p">])</span>
+        <span class="n">marginals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_marginal</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">marginals</span>
+
+<span class="k">def</span> <span class="nf">make_bfs</span><span class="p">(</span><span class="n">marginals</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    
+    <span class="n">m_one</span> <span class="o">=</span> <span class="n">marginals</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    
+    <span class="n">bfs</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">marginal</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">m_one</span><span class="p">):</span>
+        
+        <span class="n">numerator</span> <span class="o">=</span> <span class="n">marginal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">didx</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">marginal</span><span class="p">))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">index</span><span class="p">]</span>
+        <span class="n">denominators</span> <span class="o">=</span> <span class="p">[</span><span class="n">marginals</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">didx</span><span class="p">]</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">marginals</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">didx</span><span class="p">]</span>
+                
+        <span class="n">factors</span> <span class="o">=</span> <span class="p">[</span><span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span> <span class="k">for</span> <span class="n">denominator</span> <span class="ow">in</span> <span class="n">denominators</span><span class="p">]</span>
+        <span class="n">bfs</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">labels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">*</span><span class="n">factors</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">bfs</span>
+    
+<span class="n">marginals</span> <span class="o">=</span> <span class="n">collect_marginal_probabilities</span><span class="p">(</span><span class="n">data_tuples</span><span class="p">)</span>
+<span class="n">bfs</span> <span class="o">=</span> <span class="n">make_bfs</span><span class="p">(</span><span class="n">marginals</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># bayes factor to compare the marginal probability under the different priors</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+
+
+<span class="k">def</span> <span class="nf">f_marginal_prob</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">pt</span><span class="p">,</span><span class="n">pk</span><span class="p">,</span><span class="n">et</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The marginal probability is the Intgral of product of the probabilty of theta</span>
+<span class="sd">    under one condtion and the probability of a result given theta.  </span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+        
+    <span class="c1"># the probability of theta under the prior</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">beta</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pk</span><span class="p">)</span>    
+    <span class="c1"># the probability of t given n and theta</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">et</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+   
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span>
+
+<span class="k">def</span> <span class="nf">variables_marginal_prob</span><span class="p">(</span><span class="n">dt</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;These are indexes for locating the calculated parameters</span>
+<span class="sd">    under different priors</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">pt</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pk</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">et</span><span class="o">=</span><span class="n">dt</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dt</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">pt</span><span class="p">,</span> <span class="n">pk</span><span class="p">,</span> <span class="n">et</span><span class="p">,</span> <span class="n">n</span>
+
+
+<span class="k">def</span> <span class="nf">collect_marginal_probabilities</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    
+    <span class="n">marginals</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">anarray</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">this_marginal</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">atuple</span> <span class="ow">in</span> <span class="n">anarray</span><span class="p">:</span>            
+            <span class="n">these_vars</span> <span class="o">=</span> <span class="n">variables_marginal_prob</span><span class="p">(</span><span class="n">atuple</span><span class="p">)</span>
+            <span class="c1"># this where each possible value of theta and t are integrated</span>
+            <span class="c1"># these_vars are the parameters of the ditributions being integrated</span>
             <span class="n">k</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="n">f_marginal_prob</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">these_vars</span><span class="p">)</span>
             <span class="n">this_marginal</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">atuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">k</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">these_vars</span><span class="p">])</span>
         <span class="n">marginals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this_marginal</span><span class="p">)</span>
@@ -2062,10 +2111,27 @@ Given theta=0.7, and the number of surveys = 250, the expected number of positiv
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Predicted number of samples with FHP = 101
 Predicted number of samples without FHP = 148
 Average value of t/n over 1000 samples = 0.41
-Variance of t/n over 1000 samples = 0.0009
-Variance of sim_t over 1000 samples = 54
+Variance of t/n over 1000 samples = 0.001
+Variance of sim_t over 1000 samples = 61
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">sim_t</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of simulated surveys, 1000 samples of 250 surveys each&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Predicted number of surveys with at least one FHP&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Number of samples&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/chance_of_an_encounter_31_0.png" src="_images/chance_of_an_encounter_31_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -2154,12 +2220,6 @@ This document originates from https://github.com/hammerdirt-analyst/ all copyrig
     
       By Hammerdirt collaboration<br/>
     
-      <div class="extra_footer">
-        <p>
-   \u2764\ufe0f what you do.
-</p>
-
-      </div>
   </p>
 </footer>
 </main>

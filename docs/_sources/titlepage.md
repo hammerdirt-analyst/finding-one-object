@@ -4,7 +4,7 @@
 
 _Version 1, status **unpublished and in progress**_
 
-Beach litter survey results are considered from the standpoint of risk and a simple probabilistic models. The Beta - Binomial conjugate model is used to identify the probability of finding a feminine hygiene product (FHP) on the shores of Lake Geneva, Switzerland. The model is then used to develop a sampling strategy in Geneva that maximizes the chances of finding an FHP at the next survey.
+Beach litter survey results are considered from the standpoint of risk and a simple probabilistic model. The Beta - Binomial conjugate model is used to identify the probability of finding a feminine hygiene product (FHP) on the shores of Lake Geneva, Switzerland. The model is then used to develop a sampling strategy in Geneva that maximizes the chances of finding an FHP at the next survey.
 
 
 ```{image} resources/images/figure_one_cropped.png
